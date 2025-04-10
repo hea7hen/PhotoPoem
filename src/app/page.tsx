@@ -54,23 +54,23 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-background">
-      <Card className="w-full max-w-2xl bg-card shadow-md rounded-lg overflow-hidden">
-        <CardHeader className="flex flex-row items-center space-y-0 pb-2 pt-4 pl-4 pr-4">
-          <CardTitle className="text-2xl font-semibold tracking-tight">Photo Poet</CardTitle>
-          <CardDescription className="text-muted-foreground ml-auto">
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-background">
+      <Card className="w-full max-w-3xl bg-card shadow-md rounded-xl overflow-hidden">
+        <CardHeader className="flex flex-col items-start space-y-2 pb-4 pt-6 pl-8 pr-8">
+          <CardTitle className="text-3xl font-bold tracking-tight">Photo Poet</CardTitle>
+          <CardDescription className="text-md text-muted-foreground">
             Unleash the verse within your photos.
           </CardDescription>
         </CardHeader>
-        <CardContent className="p-4 space-y-4">
-          <div className="flex flex-col md:flex-row gap-4">
+        <CardContent className="p-8 space-y-6">
+          <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1">
               <label
                 htmlFor="photo-upload"
-                className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-lg cursor-pointer bg-accent hover:bg-secondary"
+                className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed rounded-xl cursor-pointer bg-accent hover:bg-secondary"
               >
                 {photo ? (
-                  <img src={photo} alt="Uploaded" className="object-contain max-h-full" />
+                  <img src={photo} alt="Uploaded" className="object-contain max-h-full rounded-xl" />
                 ) : (
                   <div className="flex flex-col items-center justify-center pt-5 pb-6">
                     <ImagePlus className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
@@ -95,13 +95,13 @@ export default function Home() {
                 placeholder="Generated Poem"
                 value={poem || ""}
                 readOnly
-                className="w-full h-64 bg-muted text-foreground rounded-lg resize-none"
+                className="w-full h-64 bg-muted text-foreground rounded-xl resize-none"
               />
             </div>
           </div>
 
           <div className="flex justify-between">
-            <Button variant="destructive" onClick={generatePoem} disabled={!photo || loading}>
+            <Button variant="default" onClick={generatePoem} disabled={!photo || loading}>
               {loading ? "Generating..." : <>Generate Poem <ArrowUp className="ml-2 h-4 w-4" /></>}
             </Button>
             {poem && (
