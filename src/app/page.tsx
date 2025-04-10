@@ -101,7 +101,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-between">
-            <Button onClick={generatePoem} disabled={!photo || loading}>
+            <Button variant="destructive" onClick={generatePoem} disabled={!photo || loading}>
               {loading ? "Generating..." : <>Generate Poem <ArrowUp className="ml-2 h-4 w-4" /></>}
             </Button>
             {poem && (
